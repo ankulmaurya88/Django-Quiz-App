@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+</head>
+<body>
+    <h2>Results</h2>
+    <p>Total Questions Answered: {{ sessions.count }}</p>
+    <p>Correct Answers: {{ correct_count }}</p>
+    <p>Incorrect Answers: {{ incorrect_count }}</p>
+    <ul>
+        {% for session in sessions %}
+            <li>
+                Question: {{ session.question.question_text }}<br>
+                Your Answer: {{ session.user_answer }}<br>
+                Correct: {{ session.correct }}
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'quiz:question' %}">Try Again</a>
+    <br></br>
+    <a href="{% url 'quiz:reset' %}">Start New Quiz</a>
+</body>
+</html>
