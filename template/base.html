@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | My Website</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles/base.css' %}">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Welcome to QuizWeb</h1>
+    <p>Your one-stop platform for AI and Python development</p>
+            <!-- <nav>
+            <ul>
+                <li><a href="{% url 'quizengine:start_quiz' %}">Start Quiz</a></li>
+                <li><a href="{% url 'quizengine:get_question' %}">Take Quiz</a></li>
+                <li><a href="{% url 'quizengine:results' %}">Results</a></li>
+                <li><a href="{% url 'quizengine:reset_quiz' %}">Reset</a></li>
+            </ul>
+        </nav> -->
+    </header>
+
+    <!-- Main Section -->
+    <main><section>
+        <p>
+            Are you passionate about technology, AI, and Python? Then you're in the right place! This interactive quiz is designed not just to test your knowledge—but to challenge your thinking, expand your learning, and most importantly, make it fun.
+            Whether you're a curious beginner exploring the world of programming or an experienced tech enthusiast wanting to stay sharp, our quiz will push your boundaries in the most exciting way.
+            <span class="emoji">🎯</span> From logic puzzles to coding concepts, each question is an opportunity to grow.
+            So grab a cup of coffee, clear your mind, and click that <strong>Start Quiz</strong> button to begin your journey toward becoming a tech wizard! <span class="emoji">🚀</span>
+        </p>
+    </section>
+            <section class="quiz-intro">
+                <h2>🧠 Master Your Mind: Take the Ultimate Quiz Challenge</h2>
+                <p>In a world driven by technology and rapid innovation, staying sharp isn’t just a bonus—it’s a necessity...</p>
+                <h3>🌟 Why Take This Quiz?</h3>
+                <ul>
+                    <li>✅ Strengthen your understanding of tech concepts</li>
+                    <li>🚀 Learn while having fun—questions come with real-world relevance</li>
+                    <li>🧩 Discover areas you excel in and topics to explore more</li>
+                    <li>🎯 Challenge yourself to beat your score every time you play</li>
+                </ul>
+                <p>This isn’t just a quiz. It’s your personal tech arena, where each click brings you closer to mastering your passion...</p>
+                
+                {% if user.is_authenticated %}
+        <a href="{% url 'quizengine:start_quiz' %}" class="btn start-quiz-btn">Start Quiz</a>
+    {% else %}
+        <!-- If the user is not authenticated, show the login form -->
+        <div class="auth-forms login-form">
+            <h4>Start Quiz </h4>
+            <form action="{% url 'accounts:login_view' %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn">Login</button>
+            </form>
+            <p>If you're new, <a href="{% url 'accounts:register' %}">sign up here</a> to get started!</p>
+        </div>
+    {% endif %}
+</section>
+        
+<!-- Navbar Section -->
+<div class="navbar">
+    {% if user.is_authenticated %}
+        <a href="{% url 'accounts:logout_view' %}" class="btn logout-btn">Logout</a>
+    {% else %}
+        <a href="{% url 'accounts:login_view' %}" class="btn login-btn">Login</a>
+    {% endif %}
+</div>
+            <section class="auth-section">
+                {% if user.is_authenticated %}
+                    <h2>Hello, {{ user.first_name }}</h2>
+                    <a href="{% url 'accounts:logout_view' %}" class="btn logout-btn">Logout</a>
+                {% else %}
+                    <!-- Login Form -->
+                    <div class="auth-forms login-form">
+                        <h2>Welcome Back</h2>
+                        <form action="{% url 'accounts:login_view' %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="btn">Login</button>
+                        </form>
+                    </div>
+            
+                    <!-- Sign Up Form -->
+                    <div class="auth-forms signup-form">
+                        <form action="{% url 'accounts:register' %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="btn">Sign Up</button>
+                        </form>
+                    </div>
+                {% endif %}
+            </section>
+            
+            {% block content %}
+            <!-- Dynamic content will be injected here -->
+            {% endblock %}
+            
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 | My Portfolio</p>
+        <p>Email: <a href="mailto:ankulmaurya88@gmail.com">ankulmaurya88@gmail.com</a></p>
+    </footer>
+
+</body>
+</html>

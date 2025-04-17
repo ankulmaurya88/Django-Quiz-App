@@ -1,0 +1,215 @@
+/* Reset some basic styles */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Header styles */
+header {
+    background-color: #282c34;
+    color: white;
+    padding: 1rem 2rem;
+    text-align: center;
+    margin: 4;
+}
+
+header nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+header nav ul li a {
+    color: #61dafb;
+    text-decoration: none;
+}
+
+main {
+    padding: 2rem;
+}
+
+/* Basic reset for margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header h1 {
+    margin-bottom: 20px;  /* Adds margin below the heading */
+}
+
+header p {
+    margin-top: 0;         /* Optional: reset the margin-top if you need */
+    margin-bottom: 20px;   /* Adds margin below the paragraph */
+}
+/* Style the navigation bar */
+.navbar {
+    display: flex;
+    justify-content: flex-end; /* Align items to the right */
+    background-color: #333;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* Style for the navbar items */
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin: 0 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for navbar links */
+.navbar a:hover {
+    background-color: #575757;
+}
+
+/* Style for the Login button when the user is not authenticated */
+/* .auth-section .auth-forms.login-form button { 
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+/* } 
+
+.auth-section .auth-forms.login-form button:hover {
+    background-color: #45a049;
+}
+
+ /* Hide login form when the user is authenticated 
+.auth-section .auth-forms.login-form {
+    display: none;
+}
+
+/* Show login button when user is not authenticated 
+.auth-section .auth-forms.login-form button {
+    display: inline-block;
+}*/
+
+/* Style for the logout button when the user is authenticated 
+.auth-section .auth-section .logout-btn {
+    display: inline-block;
+    background-color: #f44336;
+    color: white;
+    padding: 12px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+ } */
+/*  
+.auth-section .auth-section .logout-btn:hover {
+    background-color: #d32f2f;
+ }  */
+
+/* Ensure that the rest of the content doesn't get hidden under the fixed navbar */
+body {
+    padding-top: 60px; /* Adjust this depending on your navbar height */
+}
+
+
+
+
+/* Footer styles */
+footer {
+    background-color: #282c34;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+footer a {
+    color: #61dafb;
+    text-decoration: none;
+}
+section {
+    max-width: 850px;
+    margin: 50px auto;
+    padding: 35px;
+    background-color: #f9fbfe;
+    border-left: 6px solid #4e8cff;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.1rem;
+    color: #2c3e50;
+    line-height: 1.8;
+}
+
+section p {
+    margin: 0;
+}
+
+section p::first-line {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+section .emoji {
+    font-size: 1.3rem;
+    margin-right: 5px;
+}
+
+
+section {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.8;
+    color: #333;
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+section p {
+    margin-bottom: 1.2rem;
+    font-size: 1.1rem;
+}
+
+section ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+section ul li {
+    margin-bottom: 0.8rem;
+    font-size: 1.05rem;
+}
+
+section .highlight {
+    font-weight: bold;
+    color: #007BFF;
+}
+
+section .emoji {
+    font-size: 1.2rem;
+    margin-right: 6px;
+}

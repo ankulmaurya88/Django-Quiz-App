@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Questions</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles/question.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Test Your Knowledge Quiz Time</h1>
+
+        <form method="POST" action="{% url 'quizengine:submit_answer' %}" class="quiz-form">
+            {% csrf_token %}
+            
+            {% for question in questions %}
+                <div class="question-box">
+                    <p class="question-text"><strong>{{ forloop.counter }}. {{ question.question_title }}</strong></p>
+                    
+                    <input type="hidden" name="question_id_{{ forloop.counter }}" value="{{ question.id }}">
+                    
+                    {% for opt in '1234' %}
+                        {% with option=question|get_option:opt %}
+                        <label class="option">
+                            <input type="radio" name="answer_{{ forloop.counter }}" value="{{ option }}"> 
+                            {{ option }}
+                        </label>
+                        {% endwith %}
+                    {% endfor %}
+                </div>
+            {% empty %}
+                <p class="no-questions">No questions available.</p>
+            {% endfor %}
+
+            <button type="submit" class="btn">Submit Quiz</button>
+        </form>
+    </div>
+</body>
+</html>

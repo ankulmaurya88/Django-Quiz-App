@@ -1,1 +1,11 @@
-Django
+Django==4.2.2
+pymysql
+
+Django>=3.2,<4.0
+psycopg2>=2.9,<3.0          # PostgreSQL adapter for Django
+gunicorn>=20.1,<21.0         # WSGI HTTP Server for Django
+django-environ>=0.9,<1.0     # For managing environment variables
+djangorestframework>=3.12,<4.0  # If you are using Django REST Framework
+celery>=5.0,<6.0             # If you are using Celery for background tasks
+python-dotenv>=0.19,<1.0     # For managing .env files
+django-cors-headers>=3.7,<4.0 # For handling CORS if you are using APIs

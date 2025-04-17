@@ -1,0 +1,41 @@
+version: '3.3'
+
+services:
+  db:
+    image: mysql:5.7
+    container_name: quizweb_db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: QUESTION
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - quizweb_network
+
+  web:
+    build: .
+    container_name: quizweb_web
+    command: python3 manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    environment:
+      - DEBUG=1
+      - DJANGO_SECRET_KEY=your_secret_key
+      - DATABASE_URL=mysql://root:root@db:3306/QUESTION
+    depends_on:
+      - db
+    networks:
+      - quizweb_network
+
+volumes:
+  db_data:
+
+networks:
+  quizweb_network:
+    driver: bridge

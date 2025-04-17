@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎯 Start Your Quiz Now!</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles/quiz.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>📝 Welcome to the Quiz!</h1>
+        <p>Test your knowledge with fun and challenging questions.</p>
+
+        <a href="{% url 'quizengine:get_question' %}">
+            <button class="start-btn">Start Quiz 🚀</button>
+        </a>
+    </div>
+</body>
+</html>
