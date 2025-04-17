@@ -35,15 +35,25 @@ The **Django Quiz App** is a web-based quiz platform where users can take quizze
 
 ## 📸 Screenshots
 
-🔹 **Login Page**  
-User authentication for secure access.
+### 🔹 Login Page  
+User authentication for secure access.  
+![Login Page](assets/login.png)
 
-🔹 **Quiz Interface**  
-Display questions one by one, timer-based interface.
+---
 
-🔹 **Score Page**  
-Results displayed after quiz completion with user score.
+### 🔹 Quiz Interface  
+Display questions one by one, timer-based interface.  
+![Quiz Interface](assets/quiz.png)
 
+---
+
+### 🔹 Score Page  
+Results displayed after quiz completion with user score.  
+![Score Page](assets/score.png)
+
+### 🔹 Admin Page  
+Display Admin Panel. 
+![Score Page](assets/admin.png)
 ---
 
 ## 🧪 Input & Output
