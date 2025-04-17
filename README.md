@@ -77,7 +77,7 @@ After quiz submission, the user sees:
 ---
 
 ## 📁 Project Structure
-
+Django-Quiz-App/ ├── manage.py ├── quiz/ # Main quiz app │ ├── admin.py │ ├── models.py │ ├── views.py │ ├── urls.py │ └── templates/ ├── users/ # User management ├── static/ # Static files ├── templates/ # Base templates ├── Dockerfile ├── docker-compose.yml └── requirements.txt
 
 ---
 
