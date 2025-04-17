@@ -53,7 +53,7 @@ Results displayed after quiz completion with user score.
 
 ### 🔹 Admin Page  
  Display Admin Panel.
-![Score Page](assets/admin.png)
+![Admin Page](assets/admin.png)
 
 ---
 
