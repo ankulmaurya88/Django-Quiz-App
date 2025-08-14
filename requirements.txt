@@ -1,7 +1,7 @@
 Django==4.2.2
 pymysql
 
-Django>=3.2,<4.0
+
 psycopg2>=2.9,<3.0          # PostgreSQL adapter for Django
 gunicorn>=20.1,<21.0         # WSGI HTTP Server for Django
 django-environ>=0.9,<1.0     # For managing environment variables
