@@ -21,7 +21,7 @@ class QuizHomeView(TemplateView):
 
 class StartQuizView(View):
     def get(self, request):
-        return render(request, 'Quz/quize.html')
+        return render(request, 'Quz/quiz.html')
 
 
 class GetQuestionView(View):
