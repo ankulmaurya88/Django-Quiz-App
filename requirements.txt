@@ -514,5 +514,5 @@ matplotlib-inline==0.1.6
 # pyyaml>=6.0
 # Others
 tensorflow==2.13.0
-typing-extensions==4.5.0
+typing-extensions>=4.6.0
 
