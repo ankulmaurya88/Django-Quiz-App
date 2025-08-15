@@ -508,10 +508,10 @@ jupyterlab==4.0.3
 matplotlib-inline==0.1.6
 
 # Docker
-docker==4.1.0
-docker-compose>=2.5.0
-docker-pycreds==0.4.0
-pyyaml>=6.0
+# docker==4.1.0
+# # docker-compose>=2.5.0
+# docker-pycreds==0.4.0
+# pyyaml>=6.0
 # Others
 tensorflow>=2.14.0
 typing-extensions>=4.8.0
