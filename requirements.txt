@@ -510,5 +510,6 @@ docker-compose==1.25.0
 docker-pycreds==0.4.0
 
 # Others
-# protobuf==3.19.6
-# typing-extensions==4.5.0
+tensorflow>=2.14.0
+typing-extensions>=4.8.0
+
